@@ -3,6 +3,8 @@ cmake_minimum_required(VERSION 3.0)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+project(box_blur LANGUAGES CXX)
+
 # Argument with stb include dir
 set(STB_INCLUDE_DIR  "/usr/include/stb")
 
@@ -17,7 +19,6 @@ find_package(Threads REQUIRED)
 # Add the stb include directory
 include_directories(${STB_INCLUDE_DIR})
 
-project(box_blur)
 
 set(SOURCE box_blur.cpp)
 
