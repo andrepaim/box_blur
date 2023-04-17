@@ -12,6 +12,7 @@ if(EXISTS "${STB_INCLUDE_DIR}/stb_image.h" AND EXISTS "${STB_INCLUDE_DIR}/stb_im
 else()
     message(FATAL_ERROR "Could not find stb headers in ${STB_INCLUDE_DIR}")
 endif()
+find_package(Threads REQUIRED)
 
 # Add the stb include directory
 include_directories(${STB_INCLUDE_DIR})
@@ -22,3 +23,4 @@ set(SOURCE box_blur.cpp)
 
 add_executable(${PROJECT_NAME} ${SOURCE})
 
+target_link_libraries(${PROJECT_NAME} PRIVATE Threads::Threads)
